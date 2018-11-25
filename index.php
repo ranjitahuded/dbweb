@@ -350,9 +350,9 @@ if(isset($_POST['submit2']))
                     </select>
                 </form>
                 <?php
-                if(isset($_POST['bmsid'])
+                if(isset($_POST['select1'])
                 {
-                    echo "<h1>".$_POST['bmsid']."</h1>";
+                    echo "<h1>".$_POST['select1']."</h1>";
                 }
                 ?>
                 <div class="btn-group">
