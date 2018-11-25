@@ -189,7 +189,7 @@ if(isset($_POST['submit2']))
                       <?php
                       if(isset($_POST['send1_x'], $_POST['send1_y']))
                       {
-                          echo "<table border='3'>";
+                          echo "<br><br><br><br><div class='table-responsive'><table class='table table-striped table-bordered table-hover table-condensed'>";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
                           $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='HomeAppliance' and Available='YES'";
                           $result = $conn->query($inv);
@@ -215,7 +215,7 @@ if(isset($_POST['submit2']))
                       <?php
                       if(isset($_POST['send2_x'], $_POST['send2_y']))
                       {
-                          echo "<table border='3'>";
+                          echo "<br><br><br><br><div class='table-responsive'><table class='table table-striped table-bordered table-hover table-condensed'>";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
                           $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='KitchenAppliance' and Available='YES'";
                           $result = $conn->query($inv);
@@ -241,7 +241,7 @@ if(isset($_POST['submit2']))
                       <?php
                       if(isset($_POST['send3_x'], $_POST['send3_y']))
                       {
-                          echo "<table border='3'>";
+                          echo "<br><br><br><br><div class='table-responsive'><table class='table table-striped table-bordered table-hover table-condensed'>";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
                           $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='Electronics' and Available='YES'";
                           $result = $conn->query($inv);
@@ -267,7 +267,7 @@ if(isset($_POST['submit2']))
                       <?php
                       if(isset($_POST['send4_x'], $_POST['send4_y']))
                       {
-                          echo "<table border='3'>";
+                          echo "<br><br><br><br><div class='table-responsive'><table class='table table-striped table-bordered table-hover table-condensed'>";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
                           $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='Furniture' and Available='YES'";
                           $result = $conn->query($inv);
@@ -293,7 +293,7 @@ if(isset($_POST['submit2']))
                       <?php
                       if(isset($_POST['send5_x'], $_POST['send5_y']))
                       {
-                          echo "<table border='3'>";
+                          echo "<br><br><br><br><div class='table-responsive'><table class='table table-striped table-bordered table-hover table-condensed'>";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
                           $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='Bikes' and Available='YES'";
                           $result = $conn->query($inv);
