@@ -77,6 +77,15 @@
         </div>
 
 <?php
+$host="localhost";
+$dbusername="root";
+$dbpassword="root";
+$dbname="projectdb";
+$conn=new mysqli($host,$dbusername,$dbpassword,$dbname);
+if(mysqli_connect_error())
+{
+    die('Connect Error ('.mysqli_connect_errno().')'.mysqli_connect_error());
+}
 echo "<h1>Working</h1>";
 if(isset($_POST['submit1']))
 {
@@ -95,18 +104,6 @@ if(isset($_POST['submit1']))
         {
             if (!empty($password)) 
             {
-                $host="localhost";
-                $dbusername="root";
-                $dbpassword="root";
-                $dbname="projectdb";
-
-                $conn=new mysqli($host,$dbusername,$dbpassword,$dbname);
-                if(mysqli_connect_error())
-                {
-                    die('Connect Error ('.mysqli_connect_errno().')'.mysqli_connect_error());
-                }
-                else
-                {
                     $sql="INSERT INTO customer values (0,'$first','$last','$email','$password','$phone')";
                     if($conn->query($sql))
                     {
@@ -117,7 +114,6 @@ if(isset($_POST['submit1']))
                         echo "Error:".$sql."<br>".$conn->error;
                     }
                     $conn->close();
-                }
             }
             else
             {
@@ -183,62 +179,82 @@ if(isset($_POST['submit2']))
             <div class="page-header">
                 <h2>Inventory</h2>
             </div>
+
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                       <h4>Home Appliances</h4>
                       <form method="post"><input type="image" name="send1" src="img/happ5.jpg"></form>
-                        <?php
-                        if(isset($_POST['send1_x'], $_POST['send1_y']))
-                        {
-                            echo "<br><br><h1>Inventory Working</h1>";
-                        }
-                        ?>
                 </div>
+                <div class="col-lg-6">
+                      <?php
+                      if(isset($_POST['send1_x'], $_POST['send1_y']))
+                      {
+                          echo "<br><br><h1>Inventory Working</h1>";
+                      }
+                      ?>
+                </div>
+            </div>    
 
-                <div class="col-lg-4">
-                      <h4>Kitchen Appliances<b></h4>
+            <div class="row">
+                <div class="col-lg-6">
+                      <h4>Kitchen Appliances</h4>
                       <form method="post"><input type="image" name="send2" src="img/happ5.jpg"></form>
-                        <?php
-                        if(isset($_POST['send2_x'], $_POST['send2_y']))
-                        {
-                            echo "<br><br><h1>Inventory Working</h1>";
-                        }
-                        ?>
-                      
                 </div>
-                
-                <div class="col-lg-4">
-                      <h4>Electonics</h4>
+                <div class="col-lg-6">
+                      <?php
+                      if(isset($_POST['send2_x'], $_POST['send2_y']))
+                      {
+                          echo "<br><br><h1>Inventory Working</h1>";
+                      }
+                      ?>
+                </div>
+            </div>    
+
+            <div class="row">
+                <div class="col-lg-6">
+                      <h4>Electronics</h4>
                       <form method="post"><input type="image" name="send3" src="img/happ5.jpg"></form>
-                        <?php
-                        if(isset($_POST['send3_x'], $_POST['send3_y']))
-                        {
-                            echo "<br><br><h1>Inventory Working</h1>";
-}
-                        ?>
                 </div>
-                <br><br>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
+                      <?php
+                      if(isset($_POST['send3_x'], $_POST['send3_y']))
+                      {
+                          echo "<br><br><h1>Inventory Working</h1>";
+                      }
+                      ?>
+                </div>
+            </div>    
+
+            <div class="row">
+                <div class="col-lg-6">
                       <h4>Furniture</h4>
                       <form method="post"><input type="image" name="send4" src="img/happ5.jpg"></form>
-                        <?php
-                        if(isset($_POST['send4_x'], $_POST['send4_y']))
-                        {
-                            echo "<br><br><h1>Inventory Working</h1>";
-                        }
-                        ?>
                 </div>
-                
-                <div class="col-lg-4">
+                <div class="col-lg-6">
+                      <?php
+                      if(isset($_POST['send4_x'], $_POST['send4_y']))
+                      {
+                          echo "<br><br><h1>Inventory Working</h1>";
+                      }
+                      ?>
+                </div>
+            </div>    
+
+            <div class="row">
+                <div class="col-lg-6">
                       <h4>Bikes</h4>
                       <form method="post"><input type="image" name="send5" src="img/happ5.jpg"></form>
-                        <?php
-                        if(isset($_POST['send5_x'], $_POST['send5_y']))
-                        {
-                            echo "<br><br><h1>Inventory Working</h1>";
-                        }
-                        ?>            
-                </div><!--end row-->
+                </div>
+                <div class="col-lg-6">
+                      <?php
+                      if(isset($_POST['send5_x'], $_POST['send5_y']))
+                      {
+                          echo "<br><br><h1>Inventory Working</h1>";
+                      }
+                      ?>
+                </div>
+            </div>    
+
         </section>
     </div><!--end container-->
 
