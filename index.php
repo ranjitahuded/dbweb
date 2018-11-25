@@ -187,7 +187,7 @@ if(isset($_POST['submit2']))
             <div class="page-header">
                 <h2>Inventory</h2>
             </div>
-
+            <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Home Appliances</h4>
@@ -213,7 +213,9 @@ if(isset($_POST['submit2']))
                       ?>
                 </div>
             </div>    
+            </div>
             <br><br><br>
+            <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Kitchen Appliances</h4>
@@ -239,7 +241,9 @@ if(isset($_POST['submit2']))
                       ?>
                 </div>
             </div>    
+            </div>
             <br><br><br>
+            <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Electronics</h4>
@@ -264,8 +268,10 @@ if(isset($_POST['submit2']))
                       }
                       ?>
                 </div>
+            </div>
             </div>    
             <br><br><br>
+            <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Furniture</h4>
@@ -291,7 +297,9 @@ if(isset($_POST['submit2']))
                       ?>
                 </div>
             </div>    
+            </div>
             <br><br><br>
+            <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Bikes</h4>
@@ -317,7 +325,7 @@ if(isset($_POST['submit2']))
                       ?>
                 </div>
             </div>    
-
+            </div>
         </section>
     </div><!--end container-->
 
