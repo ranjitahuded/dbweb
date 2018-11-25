@@ -189,7 +189,18 @@ if(isset($_POST['submit2']))
                       <?php
                       if(isset($_POST['send1_x'], $_POST['send1_y']))
                       {
-                          echo "<br><br><h1>Inventory Working</h1>";
+                          echo "<table>";
+                          echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='HomeAppliance'"
+                          $result = $conn->query($inv);
+                          if($result-> num_rows > 0)
+                          {
+                              while ($row = $result-> fetch_assoc())
+                              {
+                                  echo "<tr><td>".$row["ItemName"]."</td><td>".$row["Color"]."</td><td>".$row["PricePerDay"]."</td></tr>";  
+                              }
+                          }
+                          echo "</table>";
                       }
                       ?>
                 </div>
@@ -204,7 +215,18 @@ if(isset($_POST['submit2']))
                       <?php
                       if(isset($_POST['send2_x'], $_POST['send2_y']))
                       {
-                          echo "<br><br><h1>Inventory Working</h1>";
+                          echo "<table>";
+                          echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='KitchenAppliance'"
+                          $result = $conn->query($inv);
+                          if($result-> num_rows > 0)
+                          {
+                              while ($row = $result-> fetch_assoc())
+                              {
+                                  echo "<tr><td>".$row["ItemName"]."</td><td>".$row["Color"]."</td><td>".$row["PricePerDay"]."</td></tr>";  
+                              }
+                          }
+                          echo "</table>";
                       }
                       ?>
                 </div>
