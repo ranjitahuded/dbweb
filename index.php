@@ -28,7 +28,7 @@
         
                 <div class="collapse navbar-collapse" id="navbar-collapse">
 
-                    <a href="#login" class="btn btn-info navbar-btn navbar-right">Register Here</a>
+                    <a href="#login" class="btn btn-warning navbar-btn navbar-right">Register Here</a>
                     <ul class="nav navbar-nav">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
@@ -331,8 +331,8 @@ if(isset($_POST['submit2']))
 
 <?php
 
-    $query1="SELECT distinct Category from inventory ";
-    $result1=mysqli_query($conn,$query1);
+    $query1="SELECT distinct Category from inventory";
+    $result1=$conn->query($query1);
     $options1="";
     while($row1=mysqli_fetch_array($result1))
     {
@@ -348,9 +348,9 @@ if(isset($_POST['submit2']))
                     <?php echo $options1;?>
                 </select>
                 <div class="btn-group">
-                    <a href="#login" class="btn btn-lg btn-info">Register</a>
+                    <a href="#login" class="btn btn-lg btn-warning">Order</a>
                     <a href="#inventory" class="btn btn-lg btn-default">Inventory</a>
-                    <a href="#contact" class="btn btn-lg btn-info">Contact Us</a>
+                    <a href="#contact" class="btn btn-lg btn-warning">Contact Us</a>
                 
                 </div>
             </div>  
