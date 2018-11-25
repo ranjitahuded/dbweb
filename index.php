@@ -174,6 +174,14 @@ if(isset($_POST['submit2']))
             </div>
         </div>
         
+        <script type="text/javascript">
+            
+            $(#send1).click(function(){
+                $('html,body').animate({scrollTop:$("#send1").offset().top},1000);
+            });
+
+        </script>
+
         <div class ="container" id="inventory">
         <section>
             <div class="page-header">
@@ -183,7 +191,7 @@ if(isset($_POST['submit2']))
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Home Appliances</h4>
-                      <form method="post"><input type="image" name="send1" src="img/inventory1.jpg"></form>
+                      <form method="post"><input type="image" id="send1" name="send1" src="img/inventory1.jpg"></form>
                 </div>
                 <div class="col-lg-6">
                       <?php
@@ -205,7 +213,7 @@ if(isset($_POST['submit2']))
                       ?>
                 </div>
             </div>    
-
+            <br><br><br>
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Kitchen Appliances</h4>
@@ -231,7 +239,7 @@ if(isset($_POST['submit2']))
                       ?>
                 </div>
             </div>    
-
+            <br><br><br>
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Electronics</h4>
@@ -257,7 +265,7 @@ if(isset($_POST['submit2']))
                       ?>
                 </div>
             </div>    
-
+            <br><br><br>
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Furniture</h4>
@@ -283,7 +291,7 @@ if(isset($_POST['submit2']))
                       ?>
                 </div>
             </div>    
-
+            <br><br><br>
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Bikes</h4>
