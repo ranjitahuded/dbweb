@@ -1,13 +1,16 @@
 <?php
 
-	$username=$_POST['username'];
-	$password=$_POST['userpassword'];
-	$email=$_POST['useremail'];
-	if(!empty($username))
+	$first=$_POST['first'];
+	$last=$_POST['last'];
+	$email=$_POST['email'];
+	$password=$_POST['password'];
+	$phone=$_POST['phone'];
+
+	if(!empty($first))
 	{
-		if(!empty($password))
+		if(!empty($email))
 		{
-			if (!empty($email)) 
+			if (!empty($password)) 
 			{
 			    $host="localhost";
 			    $dbusername="root";
@@ -21,7 +24,7 @@
 			    }
 			    else
 			    {
-				    $sql="INSERT INTO signup values ('$username','$password','$email')";
+				    $sql="INSERT INTO customer values (0,'$first','$last','$email','$password','$phone')";
 				    if($conn->query($sql))
 				    {
 					    echo "Insertion successful!";
@@ -35,19 +38,19 @@
 			}
 		    else
 	        {
-		        echo "Email cannot be empty!";
+		        echo "Password cannot be empty!";
 		        die();
 	        }
 	    }    
 		else
 		{
-			echo "Password cannot be empty!";
+			echo "Email cannot be empty!";
 			die();
 		}
 	}
 	else
 	{
-		echo "Username cannot be empty!";
+		echo "First name cannot be empty!";
 		die();
 	}
 
