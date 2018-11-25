@@ -68,19 +68,21 @@
                 <p>This startup provides a quick and efficient Home-Appliance Rental Service. The people who get trasferred from city to city run short on monetary funds. For their, and many other peoples, convenience this rental service provides a platform to organize and make the process of renting domestic appliances easier and more convenient.
                 </p>
                 <div class="btn-group">
-                    <a href="#login" class="btn btn-lg btn-info">Register</a>
+                    <a href="#login" class="btn btn-lg btn-warning">Register</a>
                     <a href="#inventory" class="btn btn-lg btn-default">Inventory</a>
-                    <a href="#contact" class="btn btn-lg btn-info">Contact Us</a>
+                    <a href="#contact" class="btn btn-lg btn-warning">Contact Us</a>
                 
                 </div>
             </div>  
         </div>
 
 <?php
+session_start();
+$loginname="";
 $host="localhost";
 $dbusername="root";
-$dbpassword="root";
-$dbname="projectdb";
+$dbpassword="";
+$dbname="projectdbb";
 $conn=new mysqli($host,$dbusername,$dbpassword,$dbname);
 if(mysqli_connect_error())
 {
@@ -135,14 +137,6 @@ if(isset($_POST['submit1']))
 }
 ?>
 
-<?php
-if(isset($_POST['submit2']))
-{
-    $message=$_POST['user[email]'];
-    echo 'message will come here';
-    echo $message;
-}
-?>
 
 
         <div class="container logmain" id="login">
@@ -159,28 +153,50 @@ if(isset($_POST['submit2']))
                     </form>
                 </div>
             </div>
-
-   
             <div class="col-md-6">
                 <div id="logbox">
-                    <form id="signup" method="post" action="">
+                    <form id="signup" method="post" action="#inventory">
                         <h1>Account Login</h1>
-                        <?php echo $message; ?>
-                        <input name="user[email]" type="email" placeholder="Email Address" class="input pass"/>
-                        <input name="user[password]" type="password" placeholder="Password" required="required" class="input pass"/>
+                        <input name="useremail" type="email" placeholder="Email Address" class="input pass"/>
+                        <input name="userpassword" type="password" placeholder="Password" required="required" class="input pass"/>
                         <input type="submit" name="submit2" value="Sign me in!" class="inputButton"/>
+                        <?php
+                            if(isset($_POST['submit2']))
+                            {
+                                $user=$_POST['useremail'];
+                                $pswd=$_POST['userpassword'];
+                                $login =mysqli_query($conn,"SELECT * FROM customer WHERE Email='$user' AND Password='$pswd' LIMIT 1"); 
+                                if (!$login) {
+                                  printf("Error: %s\n", mysqli_error($conn));
+                                  exit();
+                                }
+                                while($result=mysqli_fetch_array($login))
+                                {
+                                    $loginname=$result['FirstName'];
+                                } 
+                                $_SESSION['loginname']=$loginname;
+                            }    
+                        ?>
                     </form>
                 </div>
             </div>
         </div>
-        
-        <script type="text/javascript">
-            
-            $(#send1).click(function(){
-                $('html,body').animate({scrollTop:$("#send1").offset().top},1000);
-            });
 
-        </script>
+        <div class="jumbotron" id="welcome">
+            <div class="container text-center">
+                <?php
+                    echo "<h1>Hi ".$_SESSION['loginname']."</h1>";
+                ?>
+                <h3>Book your order</h3>
+                <br><br>
+                <div class="btn-group">
+                    <a href="#inventory" class="btn btn-lg btn-warning">Inventory</a>
+                    <a href="#form" class="btn btn-lg btn-default">Book your Order</a>
+                    <a href="#contact" class="btn btn-lg btn-warning">Contact Us</a>
+                
+                </div>
+            </div>  
+        </div>
 
         <div class ="container" id="inventory">
         <section>
