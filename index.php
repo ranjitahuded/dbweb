@@ -191,7 +191,7 @@ if(isset($_POST['submit2']))
                       {
                           echo "<table>";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
-                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='HomeAppliance'"
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='HomeAppliance'";
                           $result = $conn->query($inv);
                           if($result-> num_rows > 0)
                           {
@@ -217,7 +217,7 @@ if(isset($_POST['submit2']))
                       {
                           echo "<table>";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
-                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='KitchenAppliance'"
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='KitchenAppliance'";
                           $result = $conn->query($inv);
                           if($result-> num_rows > 0)
                           {
