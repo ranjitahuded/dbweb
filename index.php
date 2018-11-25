@@ -183,15 +183,15 @@ if(isset($_POST['submit2']))
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Home Appliances</h4>
-                      <form method="post"><input type="image" name="send1" src="img/happ5.jpg"></form>
+                      <form method="post"><input type="image" name="send1" src="img/inventory1.jpg"></form>
                 </div>
                 <div class="col-lg-6">
                       <?php
                       if(isset($_POST['send1_x'], $_POST['send1_y']))
                       {
-                          echo "<table>";
+                          echo "<table border="3">";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
-                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='HomeAppliance'";
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='HomeAppliance' and Available='YES'";
                           $result = $conn->query($inv);
                           if($result-> num_rows > 0)
                           {
@@ -209,15 +209,15 @@ if(isset($_POST['submit2']))
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Kitchen Appliances</h4>
-                      <form method="post"><input type="image" name="send2" src="img/happ5.jpg"></form>
+                      <form method="post"><input type="image" name="send2" src="img/inventory2.jpg"></form>
                 </div>
                 <div class="col-lg-6">
                       <?php
                       if(isset($_POST['send2_x'], $_POST['send2_y']))
                       {
-                          echo "<table>";
+                          echo "<table border="3">";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
-                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='KitchenAppliance'";
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='KitchenAppliance' and Available='YES'";
                           $result = $conn->query($inv);
                           if($result-> num_rows > 0)
                           {
@@ -235,13 +235,24 @@ if(isset($_POST['submit2']))
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Electronics</h4>
-                      <form method="post"><input type="image" name="send3" src="img/happ5.jpg"></form>
+                      <form method="post"><input type="image" name="send3" src="img/inventory3.jpg"></form>
                 </div>
                 <div class="col-lg-6">
                       <?php
                       if(isset($_POST['send3_x'], $_POST['send3_y']))
                       {
-                          echo "<br><br><h1>Inventory Working</h1>";
+                          echo "<table border="3">";
+                          echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='Electronics' and Available='YES'";
+                          $result = $conn->query($inv);
+                          if($result-> num_rows > 0)
+                          {
+                              while ($row = $result-> fetch_assoc())
+                              {
+                                  echo "<tr><td>".$row["ItemName"]."</td><td>".$row["Color"]."</td><td>".$row["PricePerDay"]."</td></tr>";  
+                              }
+                          }
+                          echo "</table>";
                       }
                       ?>
                 </div>
@@ -250,13 +261,24 @@ if(isset($_POST['submit2']))
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Furniture</h4>
-                      <form method="post"><input type="image" name="send4" src="img/happ5.jpg"></form>
+                      <form method="post"><input type="image" name="send4" src="img/inventory4.jpg"></form>
                 </div>
                 <div class="col-lg-6">
                       <?php
                       if(isset($_POST['send4_x'], $_POST['send4_y']))
                       {
-                          echo "<br><br><h1>Inventory Working</h1>";
+                          echo "<table border="3">";
+                          echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='Furniture' and Available='YES'";
+                          $result = $conn->query($inv);
+                          if($result-> num_rows > 0)
+                          {
+                              while ($row = $result-> fetch_assoc())
+                              {
+                                  echo "<tr><td>".$row["ItemName"]."</td><td>".$row["Color"]."</td><td>".$row["PricePerDay"]."</td></tr>";  
+                              }
+                          }
+                          echo "</table>";
                       }
                       ?>
                 </div>
@@ -265,13 +287,24 @@ if(isset($_POST['submit2']))
             <div class="row">
                 <div class="col-lg-6">
                       <h4>Bikes</h4>
-                      <form method="post"><input type="image" name="send5" src="img/happ5.jpg"></form>
+                      <form method="post"><input type="image" name="send5" src="img/inventory5.jpg"></form>
                 </div>
                 <div class="col-lg-6">
                       <?php
                       if(isset($_POST['send5_x'], $_POST['send5_y']))
                       {
-                          echo "<br><br><h1>Inventory Working</h1>";
+                          echo "<table border="3">";
+                          echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
+                          $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='Bikes' and Available='YES'";
+                          $result = $conn->query($inv);
+                          if($result-> num_rows > 0)
+                          {
+                              while ($row = $result-> fetch_assoc())
+                              {
+                                  echo "<tr><td>".$row["ItemName"]."</td><td>".$row["Color"]."</td><td>".$row["PricePerDay"]."</td></tr>";  
+                              }
+                          }
+                          echo "</table>";
                       }
                       ?>
                 </div>
