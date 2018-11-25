@@ -189,7 +189,7 @@ if(isset($_POST['submit2']))
                       <?php
                       if(isset($_POST['send1_x'], $_POST['send1_y']))
                       {
-                          echo "<br><br><br><br><table border='3'>";
+                          echo "<br><br><br><br><div class='table-responsive'><table class='table table-striped table-bordered table-hover table-condensed'>";
                           echo "<tr><th>ItemName</th><th>Color</th><th>PricePerDay</th></tr>";
                           $inv = "SELECT ItemName, Color, PricePerDay from inventory where Category='HomeAppliance' and Available='YES'";
                           $result = $conn->query($inv);
