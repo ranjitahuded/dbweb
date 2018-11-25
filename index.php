@@ -338,7 +338,6 @@ if(isset($_POST['submit2']))
     {
         $options1=$options1."<option>$row1[0]</option>";
     }
-
 ?>
 
     <div class="jumbotron">
@@ -348,20 +347,20 @@ if(isset($_POST['submit2']))
                     <select name='select1' id='select1' onchange='OrderForm.submit();'>
                         <?php echo $options1;?>
                     </select>
+                    <?php
+                    if(isset($_POST['select1']))
+                    {
+                        echo "<h1>".$_POST['select1']."</h1>";
+                    }
+                    ?>
                 </form>
-                <?php
-                if(isset($_POST['select1'])
-                {
-                    echo "<h1>".$_POST['select1']."</h1>";
-                }
-                ?>
                 <div class="btn-group">
                     <a href="#login" class="btn btn-lg btn-warning">Order</a>
                     <a href="#inventory" class="btn btn-lg btn-default">Inventory</a>
                     <a href="#contact" class="btn btn-lg btn-warning">Contact Us</a>
                 
                 </div>
-            </div>  
+          </div>  
     </div>
 
         <div class="container">
