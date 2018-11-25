@@ -329,6 +329,33 @@ if(isset($_POST['submit2']))
         </section>
     </div><!--end container-->
 
+<?php
+
+    $query1="SELECT distinct Category from inventory ";
+    $result1=mysqli_query($conn,$query1);
+    $options1="";
+    while($row1=mysqli_fetch_array($result1))
+    {
+        $options1=$options1."<option>$row1[1]</option>";
+    }
+
+?>
+
+    <div class="jumbotron">
+         <div class="container text-center">
+                <h1>Book your order</h1>
+                <select>
+                    <?php echo $options1;?>
+                </select>
+                <div class="btn-group">
+                    <a href="#login" class="btn btn-lg btn-info">Register</a>
+                    <a href="#inventory" class="btn btn-lg btn-default">Inventory</a>
+                    <a href="#contact" class="btn btn-lg btn-info">Contact Us</a>
+                
+                </div>
+            </div>  
+    </div>
+
         <div class="container">
     <section>
         <div class="page-header" id="gallery">
