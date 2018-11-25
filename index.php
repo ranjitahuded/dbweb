@@ -333,17 +333,17 @@ if(isset($_POST['submit2']))
 
     $query1="SELECT distinct Category from inventory";
     $result1=$conn->query($query1);
-    $options1="";
+    $options1="<option>Category</option>";
     while($row1=mysqli_fetch_array($result1))
     {
         $options1=$options1."<option>$row1[0]</option>";
     }
 ?>
 
-    <div class="jumbotron">
+    <div class="jumbotron" id="form">
          <div class="container text-center">
                 <h1>Book your order</h1>
-                <form method="post" action="#" name="OrderForm">
+                <form method="post" action="#form" name="OrderForm">
                     <select name='select1' id='select1' onchange='OrderForm.submit();'>
                         <?php echo $options1;?>
                     </select>
