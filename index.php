@@ -336,7 +336,7 @@ if(isset($_POST['submit2']))
     $options1="";
     while($row1=mysqli_fetch_array($result1))
     {
-        $options1=$options1."<option>$row1[1]</option>";
+        $options1=$options1."<option>$row1[0]</option>";
     }
 
 ?>
@@ -344,9 +344,17 @@ if(isset($_POST['submit2']))
     <div class="jumbotron">
          <div class="container text-center">
                 <h1>Book your order</h1>
-                <select>
-                    <?php echo $options1;?>
-                </select>
+                <form method="post" action="#" name="OrderForm">
+                    <select name='select1' id='select1' onchange='OrderForm.submit();'>
+                        <?php echo $options1;?>
+                    </select>
+                </form>
+                <?php
+                if(isset($_POST['bmsid'])
+                {
+                    echo "<h1>".$_POST['bmsid']."</h1>";
+                }
+                ?>
                 <div class="btn-group">
                     <a href="#login" class="btn btn-lg btn-warning">Order</a>
                     <a href="#inventory" class="btn btn-lg btn-default">Inventory</a>
