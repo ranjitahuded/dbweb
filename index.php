@@ -197,22 +197,47 @@ if(isset($_POST['send1_x'], $_POST['send1_y']))
 
                                 <div class="col-lg-4">
                                           <h4>Kitchen Appliances<b></h4>
-                      <input type="image" src="img/happ5.jpg">
+                      <form method="post"><input type="image" name="send2" src="img/happ5.jpg"></form>
+<?php
+if(isset($_POST['send2_x'], $_POST['send2_y']))
+{
+    echo "<br><br><h1>Inventory Working</h1>";
+}
+?>
+                      
                 </div>
                 
                                 <div class="col-lg-4">
                                           <h4>Electonics</h4>
-                      <input type="image" src="img/happ5.jpg">
+                      <form method="post"><input type="image" name="send3" src="img/happ5.jpg"></form>
+<?php
+if(isset($_POST['send3_x'], $_POST['send3_y']))
+{
+    echo "<br><br><h1>Inventory Working</h1>";
+}
+?>
                 </div>
                 <br><br>
                                 <div class="col-lg-4">
                                           <h4>Furniture</h4>
-                      <input type="image" src="img/happ5.jpg">
+                      <form method="post"><input type="image" name="send4" src="img/happ5.jpg"></form>
+<?php
+if(isset($_POST['send4_x'], $_POST['send4_y']))
+{
+    echo "<br><br><h1>Inventory Working</h1>";
+}
+?>
                                 </div>
                 
                                 <div class="col-lg-4">
                                           <h4>Bikes</h4>
-                      <input type="image" src="img/happ5.jpg">            
+                      <form method="post"><input type="image" name="send5" src="img/happ5.jpg"></form>
+<?php
+if(isset($_POST['send5_x'], $_POST['send5_y']))
+{
+    echo "<br><br><h1>Inventory Working</h1>";
+}
+?>            
                   </div><!--end row-->
         </section>
     </div><!--end container-->
